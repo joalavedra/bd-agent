@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "bd-agent"
+version = "0.1.0"
+description = "Autonomous BD/marketing agent for Keypo"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic-ai-slim[openrouter]",
+    "httpx",
+    "trafilatura>=1.12,<3.0",
+    "aiogram>=3.10",
+    "apscheduler>=3.10",
+    "python-dotenv",
+    "structlog",
+    "pydantic-settings",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-mock",
+    "respx",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = "--ignore=tests/integration"
+testpaths = ["tests"]

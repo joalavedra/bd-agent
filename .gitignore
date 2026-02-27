@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.claude/
+vault/keypo-intel/
+vault/BD-Briefings/
+vault/preferences.md
+vault/.obsidian/
